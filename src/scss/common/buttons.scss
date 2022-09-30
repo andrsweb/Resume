@@ -1,0 +1,46 @@
+.button {
+	width: 140px;
+	height: 40px;
+	font-family: $ff;
+	font-size: $fs-sm;
+	color:	$white;
+	background: $accent;
+	border: none;
+	border-radius: 10px;
+	box-shadow: 2px 2px 10px rgba(194, 84, 84, 0.678);
+	transition: all ease $tr;
+	cursor: pointer;
+	outline: none;
+	position: relative;
+
+	&:hover, &:focus {
+		opacity: $op;
+	}
+
+	&.header-button {
+		&::after {
+			content: '';
+			border-radius: 50%;
+			border: 2px solid $accent;
+			position: absolute;
+			z-index: -1;
+			top: 50%;
+			left: 50%;
+			transform: translate( -50%, -50% );
+			animation: pulse 2.5s infinite;
+		}
+
+		@keyframes pulse {
+			0% {
+				width: 30px;
+				height: 30px;
+				opacity: 1;
+		}
+			100% {
+				width: 250px;
+				height: 200px;
+				opacity: 0;
+			}
+		}
+	}
+}

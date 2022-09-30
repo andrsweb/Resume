@@ -1,1 +1,38 @@
+.header {
+    background: $white;
+    box-shadow: 1px 1px 1px 2px $white;
 
+    .container {
+        max-width: $xxl;
+    }
+
+    &-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &-logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: ease $tr;
+    }
+
+    &-menu {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    &-menu-item {
+        margin-right: 5%;
+        color: $dark;
+        transition: ease $tr;
+        cursor: pointer;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
