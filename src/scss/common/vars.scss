@@ -21,16 +21,13 @@ $ff-main	: 'Fira-Sans', sans-serif;
 
 // Font sizes.
 $fs-xs	: 12px;
-$fs-sm	: 14px;
-$fs-md	: 16px;
-$fs-lg	: 18px;
-$fs-xl	: 20px;
+$fs-sm	: 18px;
+$fs-md	: 24px;
+$fs-lg	: 40px;
+$fs-xl	: 60px;
 
 // Font weights.
-$fw-light	: 300;
 $fw-regular	: 400;
-$fw-medium	: 500;
-$fw-semibold: 600;
 $fw-bold	: 700;
 
 // Line heights.
@@ -40,6 +37,10 @@ $lh-title	: 1.3;
 // Colors.
 $white	: #FFFFFF;
 $black	: #000000;
+$main   : #16213E;
+$dark   : #0F3460;
+$viol   : #533483;
+$accent : #E94560;
 
 // Others.
 $tr: 0.35s;
