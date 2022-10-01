@@ -21,7 +21,7 @@
 		&::after {
 			content: '';
 			border-radius: 50%;
-			border: 2px solid $accent;
+			border-bottom: 2px solid $accent;
 			position: absolute;
 			z-index: -1;
 			top: 50%;
