@@ -1,0 +1,16 @@
+.about {
+    padding: 60px 0;
+    background: $main;
+
+    .container {
+        max-width: $lg;
+    }
+
+    .about-text {
+        font-family: $ff-main;
+        font-size: $fs-md;
+        line-height: $lh;
+        color: $white;
+        text-align: center;
+    }
+}
