@@ -7,6 +7,7 @@ h6, .h6 {
 	font-family: $ff-title;
 	font-weight: $fw-bold;
 	line-height: $lh-title;
+	margin: 0;
 }
 
 h1, .h1 {
@@ -24,10 +25,16 @@ h1, .h1 {
 }
 
 h2, .h2 {
-	font-size: $fs-lg;
+	font-family: $ff-title;
+	text-decoration:overline;
+	font-size: $fs-sm;
+	line-height: $lh-title;
+	margin-bottom: 100px;
+	text-align: center;
+	color: $accent;
 
 	@media all and (min-width: $lg) {
-		font-size: 36px
+		font-size: $fs-lg
 	}
 }
 
