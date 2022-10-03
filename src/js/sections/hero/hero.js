@@ -5,7 +5,7 @@ document.addEventListener( 'DOMContentLoaded', () => {
 } )
 
 const text     = "Andrii"
-const delay    = 450
+const delay    = 250
 const heroText = document.querySelector( '.hero-text' )
 
 const typeText = () => {
@@ -25,5 +25,3 @@ const typeText = () => {
 	}
 	printText(text, heroText, delay)
 }
-
-
