@@ -1,0 +1,39 @@
+.footer {
+	padding: 30px 0;
+	background: $accent;
+	
+	.container {
+		max-width: $xl;
+	}
+	
+	&-wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+	}
+	
+	.header-menu {
+		width: calc( 100% - 68px );
+		display: flex;
+		justify-content: flex-end;
+	}
+	
+	.header-menu-item {
+		color: $white;
+	}
+	
+	&-arrow {
+		width: 68px;
+		height: 68px;
+		transition: transform ease $tr;
+		
+		path {
+			fill: $white;
+		}
+		
+		&:hover {
+			transform: translateY( -5px );
+		}
+	}
+}
