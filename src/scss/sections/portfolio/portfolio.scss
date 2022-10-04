@@ -1,0 +1,21 @@
+.portfolio {
+	padding: 60px 0;
+	background: $main;
+	
+	&-slide {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		
+		a {
+			&:hover {
+				opacity: 1;
+				cursor: grab;
+			}
+		}
+		
+		img {
+			border-radius: 10px;
+		}
+	}
+}
