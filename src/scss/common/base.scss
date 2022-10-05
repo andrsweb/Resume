@@ -9,6 +9,10 @@ body, html {
 	margin: 0
 }
 
+span {
+	color: $accent;
+}
+
 body {
 	position: relative;
 	min-width: 300px;
