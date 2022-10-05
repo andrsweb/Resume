@@ -32,17 +32,7 @@ h2, .h2 {
 	margin-bottom: 100px;
 	text-align: center;
 	color: $accent;
-
-	&::before {
-		content: "";
-		position: absolute;
-		top: 0;
-		right: 50%;
-		transform: translateX( 50% );
-		display: inline-block;
-		width: 20%;
-		border-top: 2px solid $accent;
-	}
+	text-decoration: overline;
 
 	@media all and (min-width: $lg) {
 		font-size: $fs-lg

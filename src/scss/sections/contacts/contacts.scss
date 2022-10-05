@@ -6,12 +6,6 @@
 		max-width: $xl;
 	}
 
-	h2 {
-        &::before {
-            width: 17%;
-        }
-    }
-
 	&-wrapper {
 		display: flex;
 		justify-content: space-between;

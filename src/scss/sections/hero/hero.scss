@@ -1,5 +1,5 @@
 .hero {
-	padding: 120px 0 60px;
+	padding: 120px 0 100px;
 	background: $dark;
 
 	.container {
@@ -45,9 +45,7 @@
 			border-radius: 50px;
 			left: 0;
 			top: 0;
-
 			animation: img 6s 1 forwards;
-			animation-delay: 1s;
 
 			@keyframes img {
 				from {
