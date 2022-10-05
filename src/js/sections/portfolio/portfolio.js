@@ -10,7 +10,6 @@ const portfolioSwiper = () => {
 
 	const swiper = new Swiper('.swiper', {
 
-		grabCursor: true,
 		loop: true,
 		effect: 'creative',
 		modules: [ EffectCreative, Pagination ],

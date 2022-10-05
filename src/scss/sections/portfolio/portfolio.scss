@@ -4,6 +4,10 @@
 
 	h2 {
 		margin-bottom: 40px;
+
+		&::before {
+			width: 16%;
+		}
 	}
 
 	&-slide {
@@ -12,9 +16,11 @@
 		align-items: center;
 
 		a {
+			transition: scale ease $tr;
+
 			&:hover {
 				opacity: 1;
-				cursor: grab;
+				scale: 100.3%;
 			}
 		}
 

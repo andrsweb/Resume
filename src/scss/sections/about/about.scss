@@ -6,6 +6,12 @@
         max-width: $md;
     }
 
+    h2 {
+        &::before {
+            width: 30%;
+        }
+    }
+
     .about-text {
         font-family: $ff-main;
         font-size: $fs-md;

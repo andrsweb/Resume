@@ -25,13 +25,24 @@ h1, .h1 {
 }
 
 h2, .h2 {
+	position: relative;
 	font-family: $ff-title;
-	text-decoration:overline;
 	font-size: $fs-sm;
 	line-height: $lh-title;
 	margin-bottom: 100px;
 	text-align: center;
 	color: $accent;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 50%;
+		transform: translateX( 50% );
+		display: inline-block;
+		width: 20%;
+		border-top: 2px solid $accent;
+	}
 
 	@media all and (min-width: $lg) {
 		font-size: $fs-lg
@@ -61,6 +72,7 @@ h6, .h6 {
 a {
 	display: inline-block;
 	transition: color ease-out $tr;
+	text-decoration: none;
 
 	&:hover {
 		opacity: $op;

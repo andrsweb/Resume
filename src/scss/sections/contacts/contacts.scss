@@ -1,17 +1,23 @@
 .contacts {
 	padding: 60px 0;
 	background: $black;
-	
+
 	.container {
 		max-width: $xl;
 	}
-	
+
+	h2 {
+        &::before {
+            width: 17%;
+        }
+    }
+
 	&-wrapper {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 	}
-	
+
 	&-text {
 		font-family: $ff-main;
 		line-height: $lh;
@@ -19,35 +25,34 @@
 		width: 50%;
 		color: $white;
 	}
-	
+
 	&-items {
 		display: flex;
 		align-items: center;
 	}
-	
+
 	&-item {
 		margin-right: 20px;
 		transition: transform ease $tr;
-		
+
 		&:last-child {
 			margin-right: 0;
 		}
-		
+
 		&:first-child:hover {
 			transform: translateX( -5px );
 		}
-		
+
 		&:last-child:hover {
 			transform: translateX( 5px );
 		}
 	}
-	
-	
+
 	svg path {
 		fill: $white;
 		transition: fill ease $tr;
 	}
-	
+
 	svg:hover path {
 		fill: $accent;
 	}
