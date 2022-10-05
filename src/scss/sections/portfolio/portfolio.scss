@@ -2,6 +2,10 @@
 	padding: 60px 0;
 	background: $main;
 
+	h2 {
+		margin-bottom: 40px;
+	}
+
 	&-slide {
 		display: flex;
 		justify-content: center;
