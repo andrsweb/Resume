@@ -1,9 +1,25 @@
 .hero {
 	padding: 120px 0 100px;
 	background: $dark;
+	position: relative;
+	overflow: hidden;
 
 	.container {
 		max-width: $xxl;
+	}
+
+	.bg-wrapp {
+		width: 120%;
+		position: absolute;
+		top: 0;
+		right: 50%;
+		transform: translateX( 50% );
+		overflow: hidden;
+	}
+
+	&-triangles {
+		width: 100%;
+		height: auto;
 	}
 
 	&-wrapper {
@@ -17,6 +33,9 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		z-index: 100;
+		transform: translateX( 0 );
+		transition: transform ease 1s;
 	}
 
 	h1 {

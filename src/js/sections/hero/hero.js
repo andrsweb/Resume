@@ -25,3 +25,6 @@ const typeText = () => {
 	}
 	printText(text, heroText, delay)
 }
+
+
+
