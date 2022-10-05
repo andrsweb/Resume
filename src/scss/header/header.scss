@@ -6,7 +6,14 @@
 	right: 0;
 	z-index: 100;
     background: $white;
-    box-shadow: 1px 1px 1px 2px $white;
+    transition:
+        padding ease-out $tr,
+        box-shadow ease-out $tr;
+
+    &.scrolled {
+        box-shadow: 1px 3px 4px 1px whitesmoke;
+        padding: 10px 0;
+    }
 
     .container {
         max-width: $xxl;
@@ -19,6 +26,7 @@
     }
 
     &-logo {
+        width: 50px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -32,6 +40,9 @@
     }
 
     &-menu-item {
+        font-family: $ff;
+        line-height: $lh;
+        font-size: $fs-m;
         margin-right: 5%;
         color: $dark;
         transition: ease $tr;
