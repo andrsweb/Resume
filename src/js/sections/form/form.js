@@ -1,19 +1,25 @@
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
+
 document.addEventListener( 'DOMContentLoaded', () => {
     'use strict'
 
     formOnClick()
 } )
-
-formOnClick = () => {
-    const formButtons = document.querySelectorAll( '.button' )
-    const form        = document.querySelector( '.form' )
+const formOnClick = () => {
+    const formButtons       = document.querySelectorAll( '.button' )
+    const form              = document.querySelector( '.form' )
+    const targetElement     = document.querySelector( '#body-lock' )
 
     formButtons.forEach( button => {
         button.addEventListener( 'click', () => {
-            if ( ! form.classList.contains( 'opened' ) )
+
+            if ( ! form.classList.contains( 'opened' ) ) {
                 form.classList.add( 'opened' )
-            else
+                disableBodyScroll( targetElement )
+            }
+            else {
                 form.classList.remove( 'opened' )
+            }
         } )
     } )
 
@@ -24,6 +30,7 @@ formOnClick = () => {
 
         if ( target.className && target.classList.contains( 'form' ) ) {
             form.classList.remove( 'opened' )
+            enableBodyScroll( targetElement )
         }
     } )
 }
