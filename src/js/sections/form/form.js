@@ -49,8 +49,6 @@ const submitForm = () => {
         const request = new XMLHttpRequest()
 
         request.open( 'post', 'send-form.php', true )
-        request.setRequestHeader('X-Requested-With', 'XMLHttpRequest')
-        request.setRequestHeader('Access-Control-Allow-Origin', '*')
 
         const formData = new FormData( form )
 
