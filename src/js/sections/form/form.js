@@ -4,10 +4,13 @@ document.addEventListener( 'DOMContentLoaded', () => {
     'use strict'
 
     formOnClick()
+    submitForm()
 } )
+
+const form = document.querySelector( '.form' )
+
 const formOnClick = () => {
-    const formButtons       = document.querySelectorAll( '.button' )
-    const form              = document.querySelector( '.form' )
+    const formButtons       = document.querySelectorAll( '.modal-button' )
     const targetElement     = document.querySelector( '#body-lock' )
 
     formButtons.forEach( button => {
@@ -32,6 +35,32 @@ const formOnClick = () => {
             form.classList.remove( 'opened' )
             enableBodyScroll( targetElement )
         }
+    } )
+}
+
+const submitForm = () => {
+
+    const form = document.querySelector( '.form-wrapper' )
+
+    form.addEventListener( 'submit', e => {
+
+        e.preventDefault()
+
+        const request = new XMLHttpRequest()
+
+        request.open( 'post', 'send-form.php', true )
+        request.setRequestHeader('X-Requested-With', 'XMLHttpRequest')
+        request.setRequestHeader('Access-Control-Allow-Origin', '*')
+
+        const formData = new FormData( form )
+
+        request.send( formData )
+        request.addEventListener( 'load', () => {
+            if  ( request.status === 200 )
+                console.log( request.response )
+            else
+                console.error( 'себался отсюда')
+        } )
     } )
 }
 

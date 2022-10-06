@@ -4,7 +4,7 @@ document.addEventListener( 'DOMContentLoaded', () => {
 	setTimeout( typeText, 400 )
 } )
 
-const text     = "Andrii"
+const text     = 'Andrii'
 const delay    = 250
 const heroText = document.querySelector( '.hero-text' )
 

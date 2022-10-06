@@ -1,16 +1,16 @@
 <div class="form" id="body-lock">
-	<form class="form-wrapper" action="">
+	<form class="form-wrapper">
 		<fieldset>
 			<legend>
 				Write me
 			</legend>
 			<div class="person-info">
-				<input class="name" type="text" placeholder="Name">
-				<input class="lastname" type="text" placeholder="Lastname">
+				<input name="person-name"  type="text" placeholder="Name" required>
+				<input name="person-lastname"  type="text" placeholder="Lastname">
 			</div>
-			<input class="email" type="email" placeholder="@email">
-			<textarea placeholder="Write youre message here"></textarea>
-			<button class="button">
+			<input name="person-email" type="email" placeholder="@email" required>
+			<textarea name="form-textarea" placeholder="Write youre message here" required></textarea>
+			<button type="submit" class="button">
 				Send
 			</button>
 		</fieldset>
