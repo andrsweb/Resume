@@ -8,20 +8,6 @@
 		max-width: $xxl;
 	}
 
-	.bg-wrapp {
-		width: 120%;
-		position: absolute;
-		top: 0;
-		right: 50%;
-		transform: translateX( 50% );
-		overflow: hidden;
-	}
-
-	&-triangles {
-		width: 100%;
-		height: auto;
-	}
-
 	&-wrapper {
 		display: flex;
 		flex-wrap: wrap;
