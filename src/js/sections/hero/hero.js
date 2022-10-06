@@ -1,11 +1,11 @@
 document.addEventListener( 'DOMContentLoaded', () => {
 	'use strict'
 
-	setTimeout( typeText, 800 )
+	setTimeout( typeText, 400 )
 } )
 
 const text     = "Andrii"
-const delay    = 450
+const delay    = 250
 const heroText = document.querySelector( '.hero-text' )
 
 const typeText = () => {

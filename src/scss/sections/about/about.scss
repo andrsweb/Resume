@@ -13,4 +13,36 @@
         color: $white;
         text-align: center;
     }
+
+    .first-chapter, .second-chapter {
+        color: $white;
+    }
+
+    .first-chapter {
+        display: inline-block;
+        opacity: 0;
+        transform: translateX( -300%);
+        transition:
+            transform ease 2s,
+            opacity ease 3s;
+
+        &.scrolled {
+            opacity: 1;
+            transform: translate( 0 );
+        }
+    }
+
+    .second-chapter {
+        display: inline-block;
+        opacity: 0;
+        transform: translateX( 300%);
+        transition:
+            transform ease 2s,
+            opacity ease 3s;
+
+        &.scrolled {
+            opacity: 1;
+            transform: translate( 0 );
+        }
+    }
 }

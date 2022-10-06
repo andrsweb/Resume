@@ -8,11 +8,14 @@
 
 	.swiper {
 		opacity: 0;
-		transition: opacity ease 1s;
-		transition-delay: 0.4s;
+		transition-delay: 0.7s;
+		transition: opacity ease 4s,
+					scale ease 3s;
+		scale: 40%;
 
-		&.active {
+		&.scrolled {
 			opacity: 1;
+			scale: 100%;
 		}
 	}
 
@@ -22,11 +25,8 @@
 		align-items: center;
 
 		a {
-			transition: scale ease $tr;
-
 			&:hover {
 				opacity: 1;
-				scale: 100.3%;
 			}
 		}
 
