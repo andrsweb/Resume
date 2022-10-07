@@ -1,14 +1,5 @@
 .about {
-    padding: 60px 0;
     background: $main;
-
-    @media all and (min-width: $md) {
-		padding: 40px 0 40px;
-	}
-
-    @media all and (min-width: $lg) {
-		padding: 60px 0 60px;
-	}
 
     .container {
         max-width: $md;

@@ -1,5 +1,4 @@
 .skills {
-	padding: 60px 0;
 	background: $dark;
 
 	.container {
@@ -8,12 +7,13 @@
 
 	&-items {
 		display: flex;
+		align-items: flex-start;
 		flex-wrap: wrap;
 		margin: 0 -20px;
 	}
 
 	&-item {
-		width: calc( 100% / 6 );
+		width: calc( 100% / 2 );
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -23,6 +23,11 @@
 		transition:
 			opacity ease 2.5s,
 			transform ease 2s;
+		margin-bottom: 40px;
+
+		@media all and (min-width: $m) {
+			width: calc( 100% / 3);
+		}
 
 		&:first-child {
 			transition-delay: 0.5s;
@@ -38,14 +43,20 @@
 
 		&:nth-child(4) {
 			transition-delay: 0.1s;
+
+			@media all and (min-width: $m) {
+				margin-bottom: 0;
+			}
 		}
 
 		&:nth-child(5) {
 			transition-delay: 0.3s;
+			margin-bottom: 0;
 		}
 
 		&:last-child {
 			transition-delay: 0.5s;
+			margin-bottom: 0;
 		}
 
 		&:first-child, &:nth-child(2), &:nth-child(3) {
@@ -58,6 +69,7 @@
 
 		&.scrolled {
 			opacity: 1;
+
 			&:first-child, &:nth-child(2), &:nth-child(3) {
 				transform: translateX( 0 );
 
@@ -89,10 +101,14 @@
 	&-text {
 		font-family: $ff-title;
 		line-height: $lh;
-		font-size: $fs-sm;
+		font-size: $fs-x;
 		height: 100%;
-		min-height: 200px;
+		min-height: 50px;
 		text-align: center;
 		color: $white;
+
+		@media all and (min-width: $lg) {
+			font-size: $fs-sm;
+		}
 	}
 }
