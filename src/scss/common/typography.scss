@@ -20,8 +20,20 @@ h1, .h1 {
 		color: $accent;
 	}
 
-	@media all and (min-width: $lg) {
-		font-size: $fs-xl;
+	@media all and (min-width: $sm) {
+		font-size: 35px;
+	}
+
+	@media all and (min-width: $m) {
+		font-size: 40px;
+	}
+
+	@media all and (min-width: $xl) {
+		font-size: 50px;
+	}
+
+	@media all and (min-width: $xxl) {
+		font-size: 60px;
 	}
 }
 
@@ -38,26 +50,6 @@ h2, .h2 {
 	@media all and (min-width: $lg) {
 		font-size: $fs-lg
 	}
-}
-
-h3, .h3 {
-	font-size: 30px
-}
-
-h4, .h4 {
-	font-size: $fs-xl;
-
-	@media all and (min-width: $lg) {
-		font-size: 24px
-	}
-}
-
-h5, .h5 {
-	font-size: $fs-xl
-}
-
-h6, .h6 {
-	font-size: $fs-lg
 }
 
 a {
