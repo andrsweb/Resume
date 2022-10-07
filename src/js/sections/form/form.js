@@ -40,7 +40,8 @@ const formOnClick = () => {
 
 const submitForm = () => {
 
-    const form = document.querySelector( '.form-wrapper' )
+    const form = document.querySelector( '.form-wrapper' ),
+        formResponse = form.querySelector( '.form-response' )
 
     form.addEventListener( 'submit', e => {
 
@@ -52,13 +53,24 @@ const submitForm = () => {
 
         const formData = new FormData( form )
 
-        request.send( formData )
+        formResponse.classList.remove( [ 'success', 'error' ] )
+        formResponse.textContent = 'Обработка...'
         request.addEventListener( 'load', () => {
-            if  ( request.status === 200 )
-                console.log( request.response )
-            else
-                console.error( 'себался отсюда')
+            console.log( request.status )
+            if  ( request.status === 200 ) {
+                formResponse.classList.add( 'success' )
+                for ( let [ key, value ] of formData ) {
+                    localStorage.setItem( key, value )
+                    console.log( key, value )
+                }
+            } else {
+                formResponse.classList.add( 'error' )
+                console.error( request.response )
+            }
+
+            formResponse.textContent = request.response
         } )
+        request.send( formData )
     } )
 }
 
