@@ -1,16 +1,51 @@
 .about {
-    padding: 60px 0;
     background: $main;
 
     .container {
-        max-width: $lg;
+        max-width: $md;
     }
 
-    .about-text {
+    &-text {
         font-family: $ff-main;
-        font-size: $fs-md;
+        font-size: $fs-sm;
         line-height: $lh;
         color: $white;
         text-align: center;
+
+        @media all and (min-width: $lg) {
+            font-size: $fs-md;
+        }
+    }
+
+    .first-chapter, .second-chapter {
+        color: $white;
+    }
+
+    .first-chapter {
+        display: inline-block;
+        opacity: 0;
+        transform: translateX( -300%);
+        transition:
+            transform ease 2s,
+            opacity ease 3s;
+
+        &.scrolled {
+            opacity: 1;
+            transform: translate( 0 );
+        }
+    }
+
+    .second-chapter {
+        display: inline-block;
+        opacity: 0;
+        transform: translateX( 300%);
+        transition:
+            transform ease 2s,
+            opacity ease 3s;
+
+        &.scrolled {
+            opacity: 1;
+            transform: translate( 0 );
+        }
     }
 }

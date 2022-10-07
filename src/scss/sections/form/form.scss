@@ -1,0 +1,129 @@
+.form-wrapper {
+	position:fixed;
+	display:none;
+	align-items:center;
+	justify-content:center;
+	top: 0;
+	left: 0;
+	width:100%;
+	height:100%;
+	z-index: 200;
+	overflow-y: auto;
+	padding: 20px;
+	background: #16213ef1;
+
+	&.opened {
+		display: flex;
+	}
+
+	.form {
+		position: relative;
+		width: 100%;
+		max-width: 500px;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		padding: 20px 0;
+		margin: auto 0;
+		border-radius: 10px;
+		background: $dark;
+		box-shadow: 4px 3px 10px 5px #1e2742;
+	}
+
+	fieldset {
+		display: flex;
+		flex-direction: column;
+		border: 0;
+	}
+
+	legend {
+		font-family: $ff-title;
+		color: $white;
+		margin: 0 auto;
+	}
+
+	.person-info {
+		display: flex;
+		margin-bottom: 20px;
+	}
+
+	input {
+		height: 40px;
+		border: 0;
+		background: $main;
+		border-radius: 10px;
+		font-family: $ff;
+		font-size: $fs-sm;
+		color: $white;
+		padding-left: 15px;
+		transition: background ease $tr;
+
+		&:first-child {
+			width: 50%;
+			margin-right: 10px;
+		}
+
+		&:last-child {
+			width: 50%;
+		}
+
+		&:focus {
+			background: #1f29419a;
+		}
+
+		&:placeholder-shown {
+			opacity: 1;
+		}
+
+		&::placeholder {
+			opacity: 1;
+		}
+	}
+
+	textarea {
+		background:	$main;
+		font-family: $ff;
+		font-size: $fs-sm;
+		color: $white;
+		border: 0;
+		border-radius: 10px;
+		resize: none;
+		width: 100%;
+		height: 100px;
+		margin: 20px 0 20px;
+
+		&:focus {
+			background: #1f29419a;
+		}
+
+		&:placeholder-shown {
+			padding-left: 15px;
+		}
+
+		&::placeholder {
+			opacity: 1;
+		}
+	}
+
+	.button {
+		margin: 0 auto;
+	}
+}
+
+.form-response {
+	font-family: $ff-title;
+	width: 100%;
+	text-align: center;
+	font-weight: $fw-bold;
+	margin-top: 10px;
+
+	&.success {
+		color: $accent;
+	}
+
+	&.error {
+		color: $accent;
+	}
+}
+

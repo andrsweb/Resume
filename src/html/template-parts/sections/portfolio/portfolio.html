@@ -1,9 +1,9 @@
-<section class="portfolio">
+<section class="portfolio" id="portfolio">
 	<div class="container">
 		<h2>
 			Portfolio
 		</h2>
-		<div class="swiper">
+		<div class="swiper active">
 			<div class="portfolio-slides swiper-wrapper">
 				@@loop( 'portfolio-slide.html', [
 					{ "img": "img/portfolio/boldo.png", "href": "https://boldo.andrs.site/", "text": "my first multi-page project" },
@@ -12,6 +12,7 @@
 					{ "img": "img/portfolio/prod.png", "href": "https://portfolio.andrs.site/", "text": "my first multi-page project" }
 				] )
 			</div>
+			<div class="swiper-pagination"></div>
 		</div>
 	</div>
 </section>

@@ -1,50 +1,114 @@
 .skills {
-  padding: 60px 0;
-  background: $dark;
+	background: $dark;
 
-  .container {
-	max-width: $xl;
-  }
+	.container {
+		max-width: $xl;
+	}
 
-  &-items {
-	display: flex;
-	flex-wrap: wrap;
-	margin: 0 -20px;
-  }
+	&-items {
+		display: flex;
+		align-items: flex-start;
+		flex-wrap: wrap;
+		margin: 0 -20px;
+	}
 
-  &-item {
-	width: calc( 100% / 6 );
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	padding: 0 20px;
-  }
+	&-item {
+		width: calc( 100% / 2 );
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 0 20px;
+		opacity: 0;
+		transition:
+			opacity ease 2.5s,
+			transform ease 2s;
+		margin-bottom: 40px;
 
-  &-img {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 100px;
-	height: 100px;
-	margin-bottom: 40px;
-	background: $white;
-	border-radius: 50%;
-  }
+		@media all and (min-width: $m) {
+			width: calc( 100% / 3);
+		}
 
-  &-info {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-  }
+		&:first-child {
+			transition-delay: 0.5s;
+		}
 
-  &-text {
-	font-family: $ff-title;
-	line-height: $lh;
-	font-size: $fs-sm;
-	height: 100%;
-	min-height: 200px;
-	text-align: center;
-	color: $white;
-  }
+		&:nth-child(2) {
+			transition-delay: 0.3s;
+		}
+
+		&:nth-child(3) {
+			transition-delay: 0.1s;
+		}
+
+		&:nth-child(4) {
+			transition-delay: 0.1s;
+
+			@media all and (min-width: $m) {
+				margin-bottom: 0;
+			}
+		}
+
+		&:nth-child(5) {
+			transition-delay: 0.3s;
+			margin-bottom: 0;
+		}
+
+		&:last-child {
+			transition-delay: 0.5s;
+			margin-bottom: 0;
+		}
+
+		&:first-child, &:nth-child(2), &:nth-child(3) {
+			transform: translateX( -400% );
+		}
+
+		&:nth-child(4), &:nth-child(5), &:last-child {
+			transform: translateX( 400% );
+		}
+
+		&.scrolled {
+			opacity: 1;
+
+			&:first-child, &:nth-child(2), &:nth-child(3) {
+				transform: translateX( 0 );
+
+			}
+
+			&:nth-child(4), &:nth-child(5), &:last-child {
+				transform: translateX( 0 );
+			}
+		}
+	}
+
+	&-img {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100px;
+		height: 100px;
+		margin-bottom: 40px;
+		background: $white;
+		border-radius: 50%;
+	}
+
+	&-info {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&-text {
+		font-family: $ff-title;
+		line-height: $lh;
+		font-size: $fs-x;
+		height: 100%;
+		min-height: 50px;
+		text-align: center;
+		color: $white;
+
+		@media all and (min-width: $lg) {
+			font-size: $fs-sm;
+		}
+	}
 }

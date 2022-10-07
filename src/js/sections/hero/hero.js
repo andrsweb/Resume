@@ -1,10 +1,10 @@
 document.addEventListener( 'DOMContentLoaded', () => {
 	'use strict'
 
-	setTimeout( typeText, 2000 )
+	setTimeout( typeText, 400 )
 } )
 
-const text     = "Andrii"
+const text     = 'Andrii'
 const delay    = 250
 const heroText = document.querySelector( '.hero-text' )
 
@@ -25,3 +25,6 @@ const typeText = () => {
 	}
 	printText(text, heroText, delay)
 }
+
+
+

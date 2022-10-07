@@ -1,4 +1,4 @@
-import Swiper, { EffectCreative } from 'swiper';
+import Swiper, { Pagination, EffectCreative  } from 'swiper';
 
 document.addEventListener( 'DOMContentLoaded', () => {
 	'use strict'
@@ -10,10 +10,15 @@ const portfolioSwiper = () => {
 
 	const swiper = new Swiper('.swiper', {
 
-		grabCursor: true,
 		loop: true,
 		effect: 'creative',
-		modules: [ EffectCreative ],
+		modules: [ EffectCreative, Pagination ],
+
+		pagination: {
+			el: '.swiper-pagination',
+			clickable: true,
+		},
+
 		creativeEffect: {
 			prev: {
 				translate: [0, 0, -500],
