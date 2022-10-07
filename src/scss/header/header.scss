@@ -33,7 +33,6 @@
 		flex-direction: column;
         justify-content: center;
         align-items: center;
-		display: none;
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -43,7 +42,7 @@
 		padding: 20px;
 		background: $accent;
 		transform: translateX( -500% );
-		transition: opacity ease 0.5s;
+		transition: opacity ease 0.8s;
 
 		@media all and (min-width: $md) {
 			display: flex;
