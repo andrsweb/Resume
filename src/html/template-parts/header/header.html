@@ -16,16 +16,21 @@
 </head>
 <body>
 	<div class="wrapper" id="start">
-		<header class="header">
+		<header class="header" id="burger-block">
 			<div class="container">
-				<div class="header-wrapper">
+				<div class="header-box">
 					<a href="/" class="header-logo">
 						<img src="img/header/logo.png" width="68" height="68" alt="There was a logo here...">
 					</a>
-					@@include( 'header-menu.html' )
-					<button class="button modal-button">
-						Let's talk
-					</button>
+					<div class="burger-button">
+						<span></span>
+					</div>
+					<div class="header-wrapper">
+						@@include( 'header-menu.html' )
+						<button class="button modal-button">
+							Let's talk
+						</button>
+					</div>
 				</div>
 			</div>
 		</header>
