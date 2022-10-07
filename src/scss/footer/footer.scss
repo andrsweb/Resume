@@ -25,6 +25,7 @@
 		margin-bottom: 20px;
 
 		@media all and (min-width: $m) {
+			flex-direction: row;
 			width: calc( 100% - 68px );
 			justify-content: flex-end;
 			order: 2;
@@ -34,6 +35,12 @@
 
 	.header-menu-item {
 		color: $white;
+
+		@media all and (min-width: $m) {
+			margin-bottom: 0;
+			margin-right: 20px;
+		}
+
 
 		&:last-child {
 			display: none;

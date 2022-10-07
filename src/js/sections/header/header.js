@@ -43,6 +43,22 @@ document.addEventListener( 'DOMContentLoaded', () => {
 			}
 		} )
 
+		const burgerResize = () => {
+			const WINDOW_WIDTH_MD = 768
+			const windowWidth = window.innerWidth
+
+			window.addEventListener( 'resize', () => {
+
+				if ( windowWidth >= WINDOW_WIDTH_MD && burgerMenu.classList.contains( 'opened' ) ) {
+					burgerMenu.classList.remove( 'opened' )
+					burgerButton.classList.remove( 'opened' )
+					enableBodyScroll( targetElement )
+				}
+			}
+		) }
+
+		burgerResize()
+
 		const anchorsClick = () => {
 			const anchors = document.querySelectorAll( '.anchor' )
 			if ( ! anchors.length ) return
@@ -56,3 +72,5 @@ document.addEventListener( 'DOMContentLoaded', () => {
 		}
 			anchorsClick()
 	}
+
+
