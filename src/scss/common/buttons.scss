@@ -2,7 +2,7 @@
 	width: 140px;
 	height: 40px;
 	font-family: $ff;
-	font-size: $fs-xs; //sm
+	font-size: $fs-sm;
 	color:	$white;
 	background: $accent;
 	border: none;
@@ -12,9 +12,6 @@
 	cursor: pointer;
 	outline: none;
 	position: relative;
-
-	@media all and (min-width: $lg) {
-	}
 
 	&:hover, &:focus {
 		opacity: $op;
@@ -55,6 +52,10 @@
 	margin-left: auto;
 	cursor: pointer;
 	z-index: 100;
+
+	@media all and (min-width: $md) {
+		display: none;
+	}
 
 	span {
 		position: absolute;

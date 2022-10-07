@@ -27,12 +27,16 @@ const formOnClick = () => {
 
     formWrapper.addEventListener( 'click', e => {
         e.stopPropagation()
+        const headerWrapper = document.querySelector( '.header-wrapper' )
 
         const target = e.target
 
         if ( target.className && target.classList.contains( 'form-wrapper' ) ) {
             formWrapper.classList.remove( 'opened' )
-            enableBodyScroll( targetElement )
+
+            if ( ! headerWrapper.classList.contains( 'opened' ) )
+                enableBodyScroll( targetElement )
+            else  disableBodyScroll( targetElement )
         }
     } )
 }
