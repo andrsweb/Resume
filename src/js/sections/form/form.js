@@ -7,41 +7,39 @@ document.addEventListener( 'DOMContentLoaded', () => {
     submitForm()
 } )
 
-const form = document.querySelector( '.form' )
-
 const formOnClick = () => {
-    const formButtons       = document.querySelectorAll( '.modal-button' )
-    const targetElement     = document.querySelector( '#body-lock' )
+    const formWrapper    = document.querySelector( '.form-wrapper' )
+    const formButtons    = document.querySelectorAll( '.modal-button' )
+    const targetElement  = document.querySelector( '#body-lock' )
 
     formButtons.forEach( button => {
         button.addEventListener( 'click', () => {
 
-            if ( ! form.classList.contains( 'opened' ) ) {
-                form.classList.add( 'opened' )
+            if ( ! formWrapper.classList.contains( 'opened' ) ) {
+                formWrapper.classList.add( 'opened' )
                 disableBodyScroll( targetElement )
             }
             else {
-                form.classList.remove( 'opened' )
+                formWrapper.classList.remove( 'opened' )
             }
         } )
     } )
 
-    form.addEventListener( 'click', e => {
+    formWrapper.addEventListener( 'click', e => {
         e.stopPropagation()
 
         const target = e.target
 
-        if ( target.className && target.classList.contains( 'form' ) ) {
-            form.classList.remove( 'opened' )
+        if ( target.className && target.classList.contains( 'form-wrapper' ) ) {
+            formWrapper.classList.remove( 'opened' )
             enableBodyScroll( targetElement )
         }
     } )
 }
 
 const submitForm = () => {
-
-    const form = document.querySelector( '.form-wrapper' ),
-        formResponse = form.querySelector( '.form-response' )
+    const form         = document.querySelector( '.form' )
+    const formResponse = form.querySelector( '.form-response' )
 
     form.addEventListener( 'submit', e => {
 
@@ -59,10 +57,6 @@ const submitForm = () => {
             console.log( request.status )
             if  ( request.status === 200 ) {
                 formResponse.classList.add( 'success' )
-                for ( let [ key, value ] of formData ) {
-                    localStorage.setItem( key, value )
-                    console.log( key, value )
-                }
             } else {
                 formResponse.classList.add( 'error' )
                 console.error( request.response )

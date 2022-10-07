@@ -46,13 +46,13 @@ $form_textarea		= isset( $_POST['form-textarea'] ) ? as_clean_value( $_POST['for
 
 // All fields are required.
 if( ! $person_name || ! $person_lastname || ! $person_email || ! $form_textarea ){
-	echo 'Пожалуйста, заполните все поля.';
+	echo 'Please fill out all fields';
 	die();
 }
 
 // Only letters & spaces in name.
 if( ! as_check_name( $person_name ) || ! as_check_name( $person_lastname ) ){
-	echo 'Введите корректное имя и фамилию.';
+	echo 'Enter the correct first and last name';
 	die();
 }
 
@@ -62,33 +62,32 @@ if(
 	! as_check_length( $person_lastname, 1, 30 ) ||
 	! as_check_length( $person_email, 1, 30 )
 ){
-	echo 'Поля имени и почты не должны превышать 30 символов.';
+	echo 'The name and mail fields must not exceed 30 characters.';
 	die();
 }
 
 // Check E-mail.
 if( ! filter_var( $person_email, FILTER_VALIDATE_EMAIL ) ){
-	echo 'Некорректный формат почты.';
+	echo 'Incorrect mail format.';
 	die();
 }
 
 // Prepare message for mail.
-$message = "Хайль! \\о\n" .
-	"Тебе написало какое-то тело:\n\n" .
-	"Зовут - $person_name $person_lastname\n" .
+$message = "Hello Andrii \\о\n" .
+	"You take a letter:\n\n" .
+	"Name - $person_name $person_lastname\n" .
 	"Email - $person_email\n" .
-	"Нарыгал эту дичь - $form_textarea\n\n\n" .
-	"Сало уронили! \\о";
+	"Someone wrote to you - $form_textarea\n\n\n" .
 // Mail headers.
 $headers = "From: voenkomat@" . $_SERVER['HTTP_HOST'] . "\r\n" .
 	"Reply-To: voenkomat@" . $_SERVER['HTTP_HOST'] . "\r\n" .
 	"X-Mailer: PHP/" . phpversion();
 
 // Sending mail.
-if( mail('andrsweb@gmail.com', 'ПОВЕСТКА', $message, $headers ) )
-	echo 'Спасибо за Ваше сообщение! Я свяжусь с Вами в кратчайшие сроки.';	// Success.
+if( mail('andrsweb@gmail.com', 'Message', $message, $headers ) )
+	echo 'Thank you for your message! I will contact you as soon as possible.';	// Success.
 else
-	echo 'Отправка не удалась. Попробуйте ещё раз позднее.';	// Failed.
+	echo 'Sending failed. Try again later.';	// Failed.
 
 die();
 
