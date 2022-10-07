@@ -2,16 +2,28 @@
     padding: 60px 0;
     background: $main;
 
+    @media all and (min-width: $md) {
+		padding: 40px 0 40px;
+	}
+
+    @media all and (min-width: $lg) {
+		padding: 60px 0 60px;
+	}
+
     .container {
         max-width: $md;
     }
 
     &-text {
         font-family: $ff-main;
-        font-size: $fs-md;
+        font-size: $fs-sm;
         line-height: $lh;
         color: $white;
         text-align: center;
+
+        @media all and (min-width: $lg) {
+            font-size: $fs-md;
+        }
     }
 
     .first-chapter, .second-chapter {
