@@ -24,7 +24,7 @@ document.addEventListener( 'scroll', () => {
 
         if ( ! items.length || item.classList.contains( 'scrolled' ) ) return
 
-        if ( isInScope( '.skills-item', window.scrollY) ) {
+        if ( isInScope( '.skills-items', window.scrollY) ) {
             item.classList.add( 'scrolled' )
         }
     } )
