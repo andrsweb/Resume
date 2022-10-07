@@ -2,7 +2,7 @@
 	width: 140px;
 	height: 40px;
 	font-family: $ff;
-	font-size: $fs-sm;
+	font-size: $fs-xs; //sm
 	color:	$white;
 	background: $accent;
 	border: none;
@@ -12,6 +12,9 @@
 	cursor: pointer;
 	outline: none;
 	position: relative;
+
+	@media all and (min-width: $lg) {
+	}
 
 	&:hover, &:focus {
 		opacity: $op;

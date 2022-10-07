@@ -1,5 +1,5 @@
 .hero {
-	padding: 120px 0 100px;
+	padding: 120px 0 40px; //120 0 100
 	background: $dark;
 	position: relative;
 	overflow: hidden;
@@ -32,8 +32,11 @@
 
 	.hero-subtitle {
 		font-family: $ff;
+		font-size: $fs-sm; //23
 		line-height: $lh;
 		color: $white;
+		text-align: center;
+		margin-bottom: 30px; //0
 	}
 
 	&-image {
