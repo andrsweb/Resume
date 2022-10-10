@@ -49,6 +49,7 @@
   ],
   "dependencies": {
     "body-scroll-lock": "^4.0.0-beta.0",
+    "jshint": "^2.13.5",
     "swiper": "^8.4.2"
   }
 }
