@@ -1,5 +1,7 @@
 <?php
 
+require_once '../vendor/autoload.php';
+
 /**
  * Clean incoming value from trash.
  *
@@ -79,12 +81,24 @@ $message = "Hello Andrii \\о\n" .
 	"Email - $person_email\n" .
 	"Someone wrote to you - $form_textarea\n\n\n" .
 // Mail headers.
-$headers = "From: voenkomat@" . $_SERVER['HTTP_HOST'] . "\r\n" .
-	"Reply-To: voenkomat@" . $_SERVER['HTTP_HOST'] . "\r\n" .
+$headers = "From: no-reply@" . $_SERVER['HTTP_HOST'] . "\r\n" .
+	"Reply-To: no-reply@" . $_SERVER['HTTP_HOST'] . "\r\n" .
 	"X-Mailer: PHP/" . phpversion();
 
-// Sending mail.
-if( mail('andrsweb@mail.ru', 'Message', $message, $headers ) )
+$transport = (new Swift_SmtpTransport('smtp.gmail.com', 465, "ssl"))
+	->setUsername('andrsweb@gmail.com')
+	->setPassword('wugpebnnpayxoxjc');
+
+$mailer = new Swift_Mailer($transport);
+
+$message = (new Swift_Message('POVESTKA'))
+	->setFrom(['no-reply@' . $_SERVER['HTTP_HOST'] => 'VOENKOMAT'])
+	->setTo(['andrsweb@gmail.com' => 'Andrei'])
+	->setBody($message);
+
+$result = $mailer->send($message);
+
+if( $result )
 	echo 'Thank you for your message! I will contact you as soon as possible.';	// Success.
 else
 	echo 'Sending failed. Try again later.';	// Failed.
