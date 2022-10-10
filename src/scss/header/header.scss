@@ -27,6 +27,42 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+
+		&.opened {
+			.header-wrapper {
+				display: flex;
+				transform: translateX( 0 );
+				opacity: 1;
+			}
+
+			.burger-button {
+				span {
+					transform: rotate( 45deg );
+					top: 20px;
+					transition: transform ease $tr;
+				}
+
+				& span::before {
+					opacity: 0;
+				}
+
+				& span::after {
+					width: 100%;
+					transform: rotate( -90deg );
+					top: 0;
+				}
+			}
+
+			.modal-button {
+				background: $white;
+				color: $dark;
+
+				&::after {
+					content: '';
+					border-bottom: 2px solid $white;
+				}
+			}
+		}
 	}
 
     &-wrapper {
@@ -54,23 +90,6 @@
 			transform: translateX( 0 );
 			padding: 0;
         }
-
-		&.opened {
-			display: flex;
-			transform: translateX( 0 );
-			opacity: 1;
-
-			.modal-button {
-				background: $white;
-				opacity: 1;
-				color: $dark;
-				font-size: $fs-sm;
-
-				&::after {
-					border-bottom: 2px solid $white;
-				}
-			}
-		}
     }
 
     &-logo {

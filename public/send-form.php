@@ -84,7 +84,7 @@ $headers = "From: voenkomat@" . $_SERVER['HTTP_HOST'] . "\r\n" .
 	"X-Mailer: PHP/" . phpversion();
 
 // Sending mail.
-if( mail('andrsweb@gmail.com', 'Message', $message, $headers ) )
+if( mail('andrsweb@mail.ru', 'Message', $message, $headers ) )
 	echo 'Thank you for your message! I will contact you as soon as possible.';	// Success.
 else
 	echo 'Sending failed. Try again later.';	// Failed.

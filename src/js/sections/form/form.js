@@ -27,7 +27,7 @@ const formOnClick = () => {
 
     formWrapper.addEventListener( 'click', e => {
         e.stopPropagation()
-        const headerWrapper = document.querySelector( '.header-wrapper' )
+        const headerWrapper = document.querySelector( '.header-box' )
 
         const target = e.target
 
