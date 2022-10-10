@@ -1,0 +1,54 @@
+.portfolio {
+	background: $main;
+
+	h2 {
+		margin-bottom: 40px;
+	}
+
+	.swiper {
+		opacity: 0;
+		transition-delay: 0.7s;
+		transition: opacity ease 4s,
+					scale ease 3s;
+		scale: 40%;
+
+		&.scrolled {
+			opacity: 1;
+			scale: 100%;
+		}
+	}
+
+	&-slide {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		a {
+			&:hover {
+				opacity: 1;
+			}
+		}
+
+		img {
+			border-radius: 10px;
+		}
+	}
+
+	.swiper-pagination {
+		position: relative;
+		width: 100%;
+		margin-top: 30px;
+	}
+
+	.swiper-pagination-bullet {
+		width: 20px;
+		height: 20px;
+		background: $white;
+		opacity: 1;
+		border-radius: 10%;
+
+		&-active {
+			background: $accent;
+		}
+	}
+}

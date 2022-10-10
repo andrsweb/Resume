@@ -9,6 +9,10 @@ body, html {
 	margin: 0
 }
 
+span {
+	color: $accent;
+}
+
 body {
 	position: relative;
 	min-width: 300px;
@@ -23,7 +27,12 @@ body {
 
 img {
 	max-width: 100%;
-	height: auto
+	height: auto;
+	display: block;
+}
+
+svg {
+	display: block;
 }
 
 ul {
@@ -31,6 +40,20 @@ ul {
 	padding: 0;
 	list-style: none
 }
+
+section {
+    padding: 30px 0;
+    background: $main;
+
+    @media all and (min-width: $md) {
+		padding: 40px 0 40px;
+	}
+
+    @media all and (min-width: $lg) {
+		padding: 60px 0 60px;
+	}
+}
+
 
 .wrapper {
 	position: relative;

@@ -1,0 +1,92 @@
+.contacts {
+	background: $black;
+
+	.container {
+		max-width: $xl;
+	}
+
+	&-wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		align-items: center;
+
+		@media all and (min-width: $md) {
+			flex-direction: row;
+			justify-content: space-between;
+		}
+	}
+
+	&-text {
+		font-family: $ff-main;
+		line-height: $lh;
+		font-size: $fs-x;
+		width: 100%;
+		color: $white;
+		text-align: center;
+		margin-bottom: 20px;
+
+		@media all and (min-width: $md) {
+			text-align: left;
+			font-size: $fs-sm;
+			margin-bottom: 0;
+			width: 50%;
+		}
+
+		@media all and (min-width: $lg) {
+			width: auto;
+		}
+	}
+
+	&-items {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 20px;
+		width: 100%; //5-
+
+		@media all and (min-width: $md) {
+			margin-bottom: 0;
+			justify-content: flex-end;
+			width: 50%;
+		}
+
+		@media all and (min-width: $lg) {
+			width: auto;
+		}
+	}
+
+	&-item {
+		margin-right: 20px;
+		transition: transform ease $tr;
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		&:first-child:hover {
+			transform: translateX( -5px );
+		}
+
+		&:last-child:hover {
+			transform: translateX( 5px );
+		}
+	}
+
+	svg path {
+		fill: $white;
+		transition: fill ease $tr;
+	}
+
+	svg:hover path {
+		fill: $accent;
+	}
+
+	.button {
+		margin-top: 20px;
+
+		@media all and (min-width: $lg) {
+			margin-top: 0;
+		}
+	}
+}

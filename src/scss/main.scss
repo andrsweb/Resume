@@ -1,9 +1,11 @@
 // Defaults styles.
+@import '../../node_modules/swiper/swiper-bundle.min';
 @import 'common/fonts';
 @import 'common/vars';
 @import 'common/typography';
 @import 'common/grid';
 @import 'common/base';
+@import 'common/buttons';
 
 // Header styles.
 @import 'header/header';
@@ -11,5 +13,10 @@
 // Footer styles.
 @import 'footer/footer';
 
-// Home page sections styles.
-@import 'sections/home/hero';
+// Sections styles.
+@import 'sections/hero/hero';
+@import 'sections/about/about';
+@import 'sections/skills/skills';
+@import 'sections/portfolio/portfolio';
+@import 'sections/contacts/contacts';
+@import 'sections/form/form';

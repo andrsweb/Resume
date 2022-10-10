@@ -7,61 +7,72 @@ h6, .h6 {
 	font-family: $ff-title;
 	font-weight: $fw-bold;
 	line-height: $lh-title;
-	margin: 0 0 1rem
+	margin: 0;
 }
 
 h1, .h1 {
-	font-size: 32px;
+	font-size: 30px;
+	margin: 0 0 20px 0; // 0 0 40px 0
+	text-align: center;
 
-	@media all and (min-width: $lg) {
-		font-size: 36px
+	span {
+		font-family: $ff-main;
+		color: $accent;
+	}
+
+	@media all and (min-width: $sm) {
+		font-size: 35px;
+	}
+
+	@media all and (min-width: $m) {
+		font-size: 40px;
+	}
+
+	@media all and (min-width: $xl) {
+		font-size: 50px;
+	}
+
+	@media all and (min-width: $xxl) {
+		font-size: 60px;
 	}
 }
 
 h2, .h2 {
-	font-size: 24px;
+	position: relative;
+	font-family: $ff-title;
+	font-size: $fs-md;
+	line-height: $lh-title;
+	margin-bottom: 30px;
+	text-align: center;
+	color: $accent;
+	text-decoration: overline;
 
-	@media all and (min-width: $lg) {
-		font-size: 36px
+	@media all and (min-width: $m) {
+		font-size: $fs-l;
 	}
-}
 
-h3, .h3 {
-	font-size: 30px
-}
-
-h4, .h4 {
-	font-size: $fs-xl;
-
-	@media all and (min-width: $lg) {
-		font-size: 24px
+	@media all and (min-width: $md) {
+		margin-bottom: 50px;
 	}
-}
 
-h5, .h5 {
-	font-size: $fs-xl
-}
-
-h6, .h6 {
-	font-size: $fs-lg
+	@media all and (min-width: $xl) {
+		font-size: $fs-lg;
+		margin-bottom: 70px;
+	}
 }
 
 a {
 	display: inline-block;
-	text-decoration: underline;
 	transition: color ease-out $tr;
+	text-decoration: none;
 
 	&:hover {
-		text-decoration: none
+		opacity: $op;
 	}
 }
 
 p {
-	margin-top: 0;
-
-	&:last-of-type {
-		margin-bottom: 0
-	}
+	margin: 0;
 }
 
 b, strong {

@@ -1,0 +1,140 @@
+.header {
+    padding: 8px 0;
+    width: 100%;
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 200;
+    background: $white;
+    transition:
+        padding ease-out $tr,
+        box-shadow ease-out $tr;
+
+		@media all and (min-width: $md) {
+			padding: 18px 0;
+		}
+
+    &.scrolled {
+        box-shadow: 1px 3px 4px 1px whitesmoke;
+        padding: 9px 0;
+    }
+
+    .container {
+        max-width: $xxl;
+    }
+
+	.header-box {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		&.opened {
+			.header-wrapper {
+				display: flex;
+				transform: translateX( 0 );
+				opacity: 1;
+			}
+
+			.burger-button {
+				span {
+					transform: rotate( 45deg );
+					top: 20px;
+					transition: transform ease $tr;
+				}
+
+				& span::before {
+					opacity: 0;
+				}
+
+				& span::after {
+					width: 100%;
+					transform: rotate( -90deg );
+					top: 0;
+				}
+			}
+
+			.modal-button {
+				background: $white;
+				color: $dark;
+
+				&::after {
+					content: '';
+					border-bottom: 2px solid $white;
+				}
+			}
+		}
+	}
+
+    &-wrapper {
+		flex-direction: column;
+        justify-content: center;
+        align-items: center;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 50%;
+		height: 100%;
+		opacity: 0;
+		padding: 20px;
+		background: $accent;
+		transform: translateX( -500% );
+		transition: opacity ease 0.8s;
+
+		@media all and (min-width: $md) {
+			display: flex;
+            flex-direction: row;
+			width: 100%;
+			background: transparent;
+			position: static;
+			opacity: 1;
+			transform: translateX( 0 );
+			padding: 0;
+        }
+    }
+
+    &-logo {
+		width: 100%;
+        max-width: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: ease $tr;
+
+		@media all and (min-width: $lg) {
+			max-width: 50px;
+		}
+    }
+
+    &-menu {
+        width: 100%;
+        display: flex;
+		flex-direction: column;
+        justify-content: center;
+		align-items: center;
+
+		@media all and (min-width: $md) {
+			flex-direction: row;
+		}
+    }
+
+    &-menu-item {
+        font-family: $ff;
+        line-height: $lh;
+        font-size: $fs-m;
+		margin-bottom: 30px;
+        color: $dark;
+        transition: ease $tr;
+        cursor: pointer;
+
+		@media all and (min-width: $md) {
+			margin: 0 5% 0 0;
+			font-size: $fs-sm;
+		}
+
+        &:last-child {
+			@media all and (min-width: $md) {
+				margin: 0;
+			}
+        }
+    }
+}
